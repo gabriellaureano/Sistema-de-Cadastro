@@ -15,27 +15,30 @@ public class app {
 
             System.out.println("Quantos clientes quer cadastrar? ");
             cad = teclado.nextInt();
-
+            teclado.nextLine();
 
             for (int i = 0; i < cad; i++) {
 
                 System.out.println("Digite o nome:");
-                nome = teclado.next().toUpperCase();
+                nome = teclado.nextLine().toUpperCase();
+
+
                 System.out.println("Digite a idade:");
                 idade = teclado.nextInt();
-                System.out.println("Digite o plano:");
+
+                System.out.println("1. FIT R$90,00\n2. FITNESS R$115,00\n3. TOP R$140,00\nDigite o plano:");
                 plano = teclado.nextInt();
 
                 Cadastro cadastro = new Cadastro();
                 cadastro.cadastrar(clientes,nome,idade,plano);
             }
 
+
             char resposta;
             System.out.println("Quer continuar?");
             resposta = teclado.next().toLowerCase().charAt(0);
 
             if (resposta == 'n'){
-                System.out.println("Saindo...");
                 break;
             }
 
@@ -44,18 +47,20 @@ public class app {
         while (true){
             System.out.println("1. Consultar dados\n2. Sair");
             int resposta = teclado.nextInt();
+            teclado.nextLine();
 
             if (resposta == 2){
+                System.out.println("Saindo...");
                 break;
             }
-            switch (resposta){
+            switch(resposta){
                 case 1:
                     System.out.println("Nome do cliente:");
-                    String nome = teclado.next().toUpperCase();
+                    String nome = teclado.nextLine().toUpperCase();
 
                     for (Pessoa cliente : clientes) {
                         if(nome.equals(cliente.getNome())){
-                            System.out.printf("Nome: %s, Idade: %d, Plano: %d\n",cliente.getNome(),cliente.getIdade(),cliente.getPlano());
+                            System.out.printf("Nome: %s, Idade: %d, Plano: %s\n",cliente.getNome(),cliente.getIdade(),cliente.getPlano());
                         }
                     }
             }

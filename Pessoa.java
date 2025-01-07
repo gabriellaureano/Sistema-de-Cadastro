@@ -4,6 +4,8 @@ public class Pessoa {
     String nome;
     int idade;
     int plano;
+    String planoAtual;
+    double valor;
 
     public Pessoa(String nome, int idade, int plano){
         this.nome = nome;
@@ -19,8 +21,21 @@ public class Pessoa {
         return idade;
     }
 
-    public int getPlano() {
-        return plano;
+    public String getPlano() {
+        switch (this.plano){
+            case 1:
+                valor = 90.0;
+                planoAtual = "FIT R$"+ valor;
+                break;
+            case 2:
+                valor = 115.0;
+                planoAtual = "FITNESS R$" + valor;
+                break;
+            case 3:
+                valor = 140.0;
+                planoAtual = "TOP R$" + valor;
+        }
+        return planoAtual;
     }
 
 
