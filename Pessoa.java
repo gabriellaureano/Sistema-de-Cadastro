@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Pessoa {
     String nome;
@@ -37,7 +38,6 @@ public class Pessoa {
         }
         return planoAtual;
     }
-
 
 
 
